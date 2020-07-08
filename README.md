@@ -1,8 +1,18 @@
 ### Point Cloud Registration: Papers and Codes
 
-The partial-view point cloud will be aligned to the complete shape in order to obtain the 6D pose. Generally, coarse registration should be conduct firstly to provide an intial alignment, and dense registration methods like ICP (Iterative Closest Point) will be conducted to obtain the final 6D pose.
+Point cloud registration means algining pairs of point clouds that lie in different positions and orientations. There exists three kinds of registration methdods, which are **coarse registration**, **fine registration** and **global registration**.
 
-#### 1 Correspondence-based Methods
+**Coarse registration** means the pairs of point clouds have large transformations, and coarse registration provides an intial alignment.
+
+**Fine registration** means that the poses of the point clouds have little difference, and methods like ICP (Iterative Closest Point) could be conducted to obtain the final 6D pose.
+
+**Global registration** means aligning all pairs of points clouds that with an intial good pose, in order to minimize the registration error.
+
+
+
+### 1. Coarse Registration
+
+#### 1.1 Correspondence-based Methods
 
 ***2020:***
 
@@ -60,7 +70,7 @@ The partial-view point cloud will be aligned to the complete shape in order to o
 
 
 
-#### 2 Template-based Methods
+#### 1.2 Template-based Methods
 
 ***Survey papers:***
 
@@ -137,22 +147,4 @@ The partial-view point cloud will be aligned to the complete shape in order to o
 ***2014:***
 
 **[SGP]** Super 4PCS Fast Global Pointcloud Registration via Smart Indexing, [[paper](https://geometry.cs.ucl.ac.uk/projects/2014/super4PCS/super4pcs.pdf)] [[code](https://github.com/nmellado/Super4PCS)]
-
-
-
-#### 3 Voting-based Methods
-
-***2020:***
-
-**[arXiv]** MoreFusion: Multi-object Reasoning for 6D Pose Estimation from Volumetric Fusion, [[paper](https://arxiv.org/pdf/2004.04336.pdf)] [[code](https://github.com/wkentaro/morefusion)]
-
-**[arXiv]** YOLOff: You Only Learn Offsets for robust 6DoF object pose estimation, [[paper](https://arxiv.org/pdf/2002.00911.pdf)]
-
-**[arXiv]** LRF-Net: Learning Local Reference Frames for 3D Local Shape Description and Matching, [[paper](https://arxiv.org/pdf/2001.07832.pdf)]
-
-***2019:***
-
-**[arXiv]** PVN3D: A Deep Point-wise 3D Keypoints Voting Network for 6DoF Pose Estimation, [[paper](https://arxiv.org/abs/1911.04231)] [[code]()]
-
-**[CVPR]** Densefusion: 6d object pose estimation by iterative dense fusion, [[paper](https://arxiv.org/abs/1901.04780)] [[code](https://github.com/j96w/DenseFusion)]
 

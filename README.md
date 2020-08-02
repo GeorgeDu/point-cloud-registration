@@ -1,20 +1,20 @@
 ### Point Cloud Registration: Papers and Codes
 
-Point cloud registration means algining pairs of point clouds that lie in different positions and orientations. There exists three kinds of registration methdods, which are **coarse registration**, **fine registration** and **global registration**.
+Point cloud registration means algining pairs of point clouds that lie in different positions and orientations, which contains **coarse registration**, **fine registration** and **global registration**. **Coarse registration** means the pairs of point clouds have large transformations, and coarse registration provides an intial alignment. **Fine registration** means that the poses of the point clouds have little difference, and methods like ICP (Iterative Closest Point) could be conducted to obtain the final 6D pose. **Global registration** means aligning all pairs of points clouds that with an intial good pose, in order to minimize the registration error. Besides, there also exists **non-rigid registration** aiming at non-rigid situations.
 
-**Coarse registration** means the pairs of point clouds have large transformations, and coarse registration provides an intial alignment.
+#### 1. Rigid Registration
 
-**Fine registration** means that the poses of the point clouds have little difference, and methods like ICP (Iterative Closest Point) could be conducted to obtain the final 6D pose.
+There exist two kinds of methods: correspondense-based methods and template-based methods. Correspondense-based methods find distinctive 3D feature points, and template-based methods do not. Rigid registration consumes at least two pairs of point clouds while 6D object pose estimation consumes one partial point cloud and finds the 6D pose compared with the template full 3D point cloud.
 
-**Global registration** means aligning all pairs of points clouds that with an intial good pose, in order to minimize the registration error.
-
-
-
-### 1. Coarse Registration
-
-#### 1.1 Correspondence-based Methods
+##### 1.1 Correspondence-based Methods
 
 ***2020:***
+
+**[arXiv]** 3D Correspondence Grouping with Compatibility Features, [[paper](https://arxiv.org/pdf/2007.10570.pdf)]
+
+**[ECCV]** DH3D: Deep Hierarchical 3D Descriptors for Robust Large-Scale 6DoF Relocalization, [[paper](https://arxiv.org/pdf/2007.09217.pdf)]
+
+**[arXiv]** Radial intersection count image: a clutter resistant 3D shape descriptor, [[paper](https://arxiv.org/pdf/2007.02306.pdf)]
 
 **[PRL]** Fuzzy Logic and Histogram of Normal Orientation-based 3D Keypoint Detection for Point Clouds, [[paper](https://www.sciencedirect.com/science/article/abs/pii/S016786552030180X)]
 
@@ -29,6 +29,8 @@ Point cloud registration means algining pairs of point clouds that lie in differ
 **[arXiv]** Self-supervised Point Set Local Descriptors for Point Cloud Registration, [[paper](https://arxiv.org/pdf/2003.05199.pdf)]
 
 **[arXiv]** StickyPillars: Robust feature matching on point clouds using Graph Neural Networks, [[paper](https://arxiv.org/pdf/2002.03983.pdf)]
+
+**[arXiv]** LRF-Net: Learning Local Reference Frames for 3D Local Shape Description and Matching, [[paper](https://arxiv.org/pdf/2001.07832.pdf)]
 
 ***2019:***
 
@@ -70,7 +72,7 @@ Point cloud registration means algining pairs of point clouds that lie in differ
 
 
 
-#### 1.2 Template-based Methods
+##### 1.2 Template-based Methods
 
 ***Survey papers:***
 
@@ -80,9 +82,15 @@ Point cloud registration means algining pairs of point clouds that lie in differ
 
 **[arXiv]** Least Squares Optimization: from Theory to Practice, [[paper](https://arxiv.org/pdf/2002.11051.pdf)]
 
-
-
 ***2020:***
+
+**[ITSC]** DeepCLR: Correspondence-Less Architecture for Deep End-to-End Point Cloud Registration, [[paper](https://arxiv.org/pdf/2007.11255.pdf)]
+
+**[arXiv]** Fast and Robust Iterative Closet Point, [[paper](https://arxiv.org/pdf/2007.07627.pdf)]
+
+**[arXiv]** The Phong Surface: Efficient 3D Model Fitting using Lifted Optimization, [[paper](https://arxiv.org/pdf/2007.04940.pdf)]
+
+**[arXiv]** Aligning Partially Overlapping Point Sets: an Inner Approximation Algorithm, [[paper](https://arxiv.org/pdf/2007.02363.pdf)]
 
 **[arXiv]** An Analysis of SVD for Deep Rotation Estimation, [[paper](https://arxiv.org/pdf/2006.14616.pdf)]
 
@@ -146,5 +154,32 @@ Point cloud registration means algining pairs of point clouds that lie in differ
 
 ***2014:***
 
-**[SGP]** Super 4PCS Fast Global Pointcloud Registration via Smart Indexing, [[paper](https://geometry.cs.ucl.ac.uk/projects/2014/super4PCS/super4pcs.pdf)] [[code](https://github.com/nmellado/Super4PCS)]
+**[SGP]** Super 4PCS: Fast Global Pointcloud Registration via Smart Indexing, [[paper](https://geometry.cs.ucl.ac.uk/projects/2014/super4PCS/super4pcs.pdf)] [[code](https://github.com/nmellado/Super4PCS)]
 
+
+
+#### 3. Global Registration
+
+
+
+#### 2. Non-rigid registration
+
+***2020:***
+
+**[arXiv]** Neural Non-Rigid Tracking, [[paper](https://arxiv.org/pdf/2006.13240.pdf)]
+
+**[arXiv]** Quasi-Newton Solver for Robust Non-Rigid Registration, [[paper](https://arxiv.org/pdf/2004.04322.pdf)]
+
+**[arXiv]** MINA: Convex Mixed-Integer Programming for Non-Rigid Shape Alignment, [[paper](https://arxiv.org/pdf/2002.12623.pdf)]
+
+***2019:***
+
+**[arXiv]** Non-Rigid Point Set Registration Networks, [[paper](https://arxiv.org/abs/1904.01428)] [[code](https://github.com/Lingjing324/PR-Net)]
+
+***2018:***
+
+**[RAL]** Transferring Category-based Functional Grasping Skills by Latent Space Non-Rigid Registration, [[paper](https://arxiv.org/abs/1809.05390)]
+
+**[RAS]** Learning Postural Synergies for Categorical Grasping through Shape Space Registration, [[paper](https://arxiv.org/abs/1810.07967)]
+
+**[RAS]** Autonomous Dual-Arm Manipulation of Familiar Objects, [[paper](https://arxiv.org/abs/1811.08716)]

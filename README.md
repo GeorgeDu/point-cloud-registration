@@ -1,10 +1,10 @@
 ### Point Cloud Registration: Papers and Codes
 
-Point cloud registration means algining pairs of point clouds that lie in different positions and orientations, which contains **coarse registration**, **fine registration** and **global registration**. **Coarse registration** means the pairs of point clouds have large transformations, and coarse registration provides an intial alignment. **Fine registration** means that the poses of the point clouds have little difference, and methods like ICP (Iterative Closest Point) could be conducted to obtain the final 6D pose. **Global registration** means aligning all pairs of points clouds that with an intial good pose, in order to minimize the registration error. Besides, there also exists **non-rigid registration** aiming at non-rigid situations.
+Point cloud registration means aligning pairs of point clouds that lie in different positions and orientations, which contains **coarse registration** and **fine registration**. **Coarse registration** means global registration, where the pairs of point clouds have large transformations, and coarse registration provides an initial alignment. **Fine registration** means local registration, where the poses of the point clouds have little difference, and methods like ICP (Iterative Closest Point) could be conducted to obtain the final 6D pose. Besides, there also exists **non-rigid registration** aiming at non-rigid situations.
 
-#### 1. Rigid Registration
+#### 1. Coarse Registration
 
-There exist two kinds of methods: correspondense-based methods and template-based methods. Correspondense-based methods find distinctive 3D feature points, and template-based methods do not. Rigid registration consumes at least two pairs of point clouds while 6D object pose estimation consumes one partial point cloud and finds the 6D pose compared with the template full 3D point cloud.
+Based on the way of finding correspondences, methods can be divided into correspondence-based methods and template-based methods, where the former finds distinctive feature points and the latter do not.
 
 ##### 1.1 Correspondence-based Methods
 
@@ -158,11 +158,21 @@ There exist two kinds of methods: correspondense-based methods and template-base
 
 
 
-#### 3. Global Registration
+----------
 
 
 
-#### 2. Non-rigid registration
+#### 2. Fine Registration
+
+***1992:***
+
+**[TPAMI]** ICP: A method for registration of 3-D shapes, [[paper](http://www-evasion.inrialpes.fr/people/Franck.Hetroy/Teaching/ProjetsImage/2007/Bib/besl_mckay-pami1992.pdf)]
+
+----------
+
+
+
+#### 3. Non-rigid registration
 
 ***2020:***
 
@@ -183,3 +193,4 @@ There exist two kinds of methods: correspondense-based methods and template-base
 **[RAS]** Learning Postural Synergies for Categorical Grasping through Shape Space Registration, [[paper](https://arxiv.org/abs/1810.07967)]
 
 **[RAS]** Autonomous Dual-Arm Manipulation of Familiar Objects, [[paper](https://arxiv.org/abs/1811.08716)]
+
